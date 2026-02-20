@@ -14,6 +14,8 @@ steps:
 - task: Docker@2
   inputs:
     command: 'login'
+    containerRegistry: 'DockerRegistryConnection'
+        
 
 - task: Docker@2
   inputs:
