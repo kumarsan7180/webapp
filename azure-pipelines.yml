@@ -20,7 +20,7 @@ steps:
     containerRegistry: 'DockerHubConnection'
     command: 'build'
     Dockerfile: '**/Dockerfile'
-    arguments: '-t "WebApp"'
+    arguments: '-t "webapp"'
 
 - task: Docker@2
   inputs:
