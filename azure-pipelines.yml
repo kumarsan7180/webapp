@@ -20,13 +20,11 @@ steps:
     containerRegistry: 'DockerHubConnection'
     command: 'build'
     Dockerfile: '**/Dockerfile'
-    tags: 'v1'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'ACRServiceConnection'
     repository: '7180sandeepacr'
     command: 'push'
-    tags: 'v1'
 
 
