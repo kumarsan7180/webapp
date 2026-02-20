@@ -20,6 +20,7 @@ steps:
     containerRegistry: 'DockerHubConnection'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    tags: 'v1'
 
 - task: Docker@2
   inputs:
