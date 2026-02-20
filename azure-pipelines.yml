@@ -17,10 +17,16 @@ steps:
 
 - task: Docker@2
   inputs:
+    containerRegistry: 'DockerHubConnection'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    arguments: '-t "WebApp"'
+
+- task: Docker@2
+  inputs:
     containerRegistry: 'ACRServiceConnection'
     repository: '7180sandeepacr'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    tags: 'mywebapp:v1'
+    command: 'push'
+    tags: 'v1'
 
 
