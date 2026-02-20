@@ -10,16 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
 - task: Docker@2
   inputs:
+    containerRegistry: 'DockerHubConnection'
     command: 'login'
-    containerRegistry: 'DockerRegistryConnection'
-        
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'SandeepDevACR'
-    repository: 'SandeepACR'
+    containerRegistry: 'ACRServiceConnection'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: 'mywebapp:v1'
